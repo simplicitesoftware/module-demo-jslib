@@ -3,16 +3,12 @@ const DemoJSLib = (() => {
 		const app = simplicite.session();
 		app.info(`Using lib version: ${simplicite.constants.MODULE_VERSION}`);
 
-		// Business object
 		const prd = app.getBusinessObject('DemoProduct');
-		prd.search(
-			{ demoPrdAvailable: true }, // Filters
-			{ inlineDocuments: [ 'demoPrdPicture' ] } // Options
-		).then(list => {
+		prd.search({ demoPrdAvailable: true }).then(list => {
 			const p = $('<ul/>');
 			for (const item of list) {
 				p.append($('<li/>')
-					.append($('<img/>').attr('src', prd.getFieldValue('demoPrdPicture', item).getDataURL()))
+					.append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)))
 					.append($('<h1/>').text(item.demoPrdName))
 					.append($('<h2/>').text(item.demoPrdReference))
 					.append($('<p/>').html(item.demoPrdDescription))

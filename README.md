@@ -18,11 +18,8 @@ within the generic Simplicité&reg; UI.
 `DemoJSLib` external object definition
 --------------------------------------
 
-This UI component external object shows
-a typical usage of the NPM js lib for displaying:
-
-- health check data,
-- grant data,
-- a business object data
+This custom UI component shows
+a typical usage of the JS lib for displaying
+the _Product_ business object list
 
 

@@ -26,12 +26,9 @@ within the generic Simplicité&reg; UI.]]></mdl_comment>
 		<obe_name>DemoJSLib</obe_name>
 		<obe_type>E</obe_type>
 		<obe_url/>
-		<obe_comment><![CDATA[This UI component external object shows
-a typical usage of the NPM js lib for displaying:
-
-- health check data,
-- grant data,
-- a business object data]]></obe_comment>
+		<obe_comment><![CDATA[This custom UI component shows
+a typical usage of the JS lib for displaying
+the _Product_ business object list]]></obe_comment>
 		<obe_help/>
 		<obe_class/>
 		<obe_script_id>src/com/simplicite/extobjects/DemoJSLib/DemoJSLib.java</obe_script_id>
@@ -167,7 +164,7 @@ a typical usage of the NPM js lib for displaying:
 		<tsl_typeObject>O</tsl_typeObject>
 		<tsl_id.obe_name>DemoJSLib</tsl_id.obe_name>
 		<tsl_lang>ENU</tsl_lang>
-		<tsl_value>JS lib demo</tsl_value>
+		<tsl_value>Products catalog (JS lib)</tsl_value>
 		<tsl_help/>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
@@ -175,7 +172,7 @@ a typical usage of the NPM js lib for displaying:
 		<tsl_typeObject>O</tsl_typeObject>
 		<tsl_id.obe_name>DemoJSLib</tsl_id.obe_name>
 		<tsl_lang>FRA</tsl_lang>
-		<tsl_value>Démo lib JS</tsl_value>
+		<tsl_value>Catalogue produits (lib JS)</tsl_value>
 		<tsl_help/>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
