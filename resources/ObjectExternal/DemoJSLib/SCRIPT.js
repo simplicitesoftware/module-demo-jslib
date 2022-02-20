@@ -1,4 +1,8 @@
 const DemoJSLib = (() => {
+	function displayForm() {
+		$ui.displayForm(null, 'DemoProduct', $(this).data('id'), { nav: 'add' });
+	}
+
 	function render(params) {
 		const app = simplicite.session();
 		app.info(`Using lib version: ${simplicite.constants.MODULE_VERSION}`);
@@ -12,6 +16,7 @@ const DemoJSLib = (() => {
 					.append($('<h1/>').text(item.demoPrdName))
 					.append($('<h2/>').text(item.demoPrdReference))
 					.append($('<p/>').html(item.demoPrdDescription))
+					.data('id', item.row_id).click(displayForm)
 				);
 			}
 			$('#demojslib').append(p);
