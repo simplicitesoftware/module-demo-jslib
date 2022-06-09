@@ -89,7 +89,7 @@ the _Product_ business object list]]></obe_comment>
 		<map_domain_id.obd_name>DemoDomain</map_domain_id.obd_name>
 		<map_object_id.obj_name>DemoJSLib</map_object_id.obj_name>
 		<map_process_id.pcs_name/>
-		<map_order>79950</map_order>
+		<map_order>70950</map_order>
 		<map_ext>1</map_ext>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
