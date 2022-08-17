@@ -2,7 +2,6 @@
 /build
 /target
 /node_modules
-/package-lock.json
 /tmp
 /temp
 /effective.pom
@@ -14,21 +13,20 @@
 /**/.DS_Store
 
 # -- Eclipse --
-#/.classpath
-#/.settings
-#/.project
-#/.apt_generated*
+/.classpath
+/.settings
+/.project
 
 # -- IntelliJ --
-#/.idea
-#/*.iml
+/.idea
+/*.iml
 
 # -- VSCode --
-#/.vscode
+/.vscode
 
 # -- Theia --
-#/.theia
-#/.factorypath
+/.theia
+/.factorypath
 
 # -- GitHub --
-#/.github
+/.github
