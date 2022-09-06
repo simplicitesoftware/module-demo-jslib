@@ -17,7 +17,7 @@ var DemoJSLib = DemoJSLib || (function() {
 			for (const f in prd)
 				if (typeof item[`demoOrdPrdId__${f}`] !== "undefined")
 					item[`demoOrdPrdId__${f}`] = prd[f];
-			$ui.displayForm(null, 'DemoOrder', app.constants.DEFAULT_ROW_ID, { nav: 'add', metadata: true, values: item });
+			$ui.displayForm(null, ord.getName(), app.constants.DEFAULT_ROW_ID, { nav: 'add', metadata: true, values: item });
 		});
 	}
 
