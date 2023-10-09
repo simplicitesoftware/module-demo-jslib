@@ -4,5 +4,8 @@ public class DemoJSLib extends com.simplicite.webapp.web.ResponsiveExternalObjec
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void init(com.simplicite.util.tools.Parameters params) { addSimpliciteClient(); }
+	public void init(com.simplicite.util.tools.Parameters params) {
+		// Add Simplicité client lib
+		addSimpliciteClient();
+	}
 }
