@@ -1,4 +1,4 @@
-var DemoJSLib = DemoJSLib || (function() {
+var DemoJSLib = DemoJSLib || (() => {
 	const app  = simplicite.session(); // Client lib is referenced in Java code
 	app.info(`Using lib version: ${simplicite.constants.MODULE_VERSION}`);
 
