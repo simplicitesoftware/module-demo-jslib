@@ -23,17 +23,27 @@ var DemoJSLib = DemoJSLib || (() => {
 
 	function render(params) {
 		prd.search({ demoPrdAvailable: true }).then(list => {
-			const p = $('<ul/>');
+			const indicators = $('#demojslib .carousel-indicators').empty();
+			const products = $('#demojslib .carousel-inner').empty();
+			let i = 0;
 			for (const item of list) {
-				p.append($('<li/>').data('item', item)
+				const b = $('<button/>')
+					.attr('data-bs-target', '#demojslib')
+					.attr('data-bs-slide-to', i)
+					.attr('aria-label', item.demoPrdReference);
+				if (i == 0)
+					b.addClass('active').attr('aria-active', true);
+				indicators.append(b);
+				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}"/>`)
+					.data('item', item)
 					.append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product))
 					.append($('<h1/>').text(item.demoPrdName))
 					.append($('<h2/>').text(item.demoPrdReference))
 					.append($('<p/>').html(item.demoPrdDescription))
 					.append($('<button/>').text('Order !').click(order))
 				);
+				i++;
 			}
-			$('#demojslib').html(p);
 		});
 	}
 

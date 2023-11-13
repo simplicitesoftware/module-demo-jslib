@@ -3,54 +3,39 @@
 @shadow: .25rem .25rem 1rem #505050;
 
 #demojslib {
-	text-align: center;
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding-inline-start: 0;
-		padding-inline-end: 0;
-		li {
-			background-color: #FFFFFF;
-			display: inline-block;
-			vertical-align: top;
+	padding-bottom: 3rem;
+	background: #FFFFFF;
+	.carousel-item {
+	    text-align: center;
+		padding: 1rem;
+		h1 { color: #202020; font-size: 1.5rem; }
+		h2 { color: #CB8620; font-size: 1.25rem; font-style: italic; }
+		p { color: #707070; }
+		img {
+			max-width: 50%;
+			border: solid 1px transparent;
+			border-radius: .5rem;
+			padding: .1rem;
+			margin: .25rem;
+		}
+		img:focus, img:hover, img:active {
 			border: @border;
-			border-radius: .75rem;
 			box-shadow: @shadow;
-			margin: .75rem;
-			padding: .5rem;
-			min-width: 10rem;
-			max-width: 15rem;
-			height: 20rem;
-			overflow: auto;
-			h1 { color: #202020; font-size: 1.5rem; }
-			h2 { color: #CB8620; font-size: 1.25rem; font-style: italic; }
-			p { color: #707070; }
-			img {
-				max-width: 50%;
-				border: solid 1px transparent;
-				border-radius: .5rem;
-				padding: .1rem;
-				margin: .25rem;
-			}
-			img:focus, img:hover, img:active {
-				border: @border;
-				box-shadow: @shadow;
-				cursor: pointer;
-			}
-			button {
-				background: @button-color;
-				color: #FFFFFF;
-				padding: .2rem 1rem;
-				font-size: 1rem;
-				border: none 0;
-				border-radius: 5px;
-			}
-			button:hover, button:active {
-				background: darken(@button-color, 10%);
-			}
-			img:active, button:active {
-				transform: translateY(4px);
-			}
+			cursor: pointer;
+		}
+		button {
+			background: @button-color;
+			color: #FFFFFF;
+			padding: .2rem 1rem;
+			font-size: 1rem;
+			border: none 0;
+			border-radius: 5px;
+		}
+		button:hover, button:active {
+			background: darken(@button-color, 10%);
+		}
+		img:active, button:active {
+			transform: translateY(4px);
 		}
 	}
 }
