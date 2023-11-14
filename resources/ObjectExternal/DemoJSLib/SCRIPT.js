@@ -32,13 +32,13 @@ var DemoJSLib = DemoJSLib || (() => {
 				if (i == 0)
 					b.addClass('active').attr('aria-active', true);
 				indicators.append(b);
-				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}"/>`)
-					.append($('<div class="product"/>')
+				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}" data-bs-interval="5000"/>`)
+					.append($('<div class="bg-body product"/>')
 						.append($('<div/>').append($('<img/>')
 							.attr('src', prd.getFieldDocumentURL('demoPrdPicture', item))
 							.data('row_id', item.row_id)
 							.click(product)))
-						.append($('<div/>')
+						.append($('<div class="product-desc"/>')
 							.append($('<h1/>').text(item.demoPrdName))
 							.append($('<h2/>').text(item.demoPrdReference))
 							.append($('<p/>').html(item.demoPrdDescription))
