@@ -10,7 +10,7 @@ var DemoJSLib = DemoJSLib || (() => {
 	}
 	
 	function order(evt) {
-		const prd = $(this).parent().data('item');
+		const prd = $(this).data('item');
 		ord.getForCreate().then(item => {
 			item.demoOrdPrdId = prd.row_id;
 			// Populate other referenced fields
@@ -35,12 +35,15 @@ var DemoJSLib = DemoJSLib || (() => {
 					b.addClass('active').attr('aria-active', true);
 				indicators.append(b);
 				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}"/>`)
-					.data('item', item)
-					.append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product))
-					.append($('<h1/>').text(item.demoPrdName))
-					.append($('<h2/>').text(item.demoPrdReference))
-					.append($('<p/>').html(item.demoPrdDescription))
-					.append($('<button/>').text('Order !').click(order))
+					.append($('<div class="product"/>')
+						.append($('<div/>').append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product)))
+						.append($('<div/>')
+							.append($('<h1/>').text(item.demoPrdName))
+							.append($('<h2/>').text(item.demoPrdReference))
+							.append($('<p/>').html(item.demoPrdDescription))
+							.append($('<button/>').text('Order !').data('item', item).click(order))
+						)
+					)
 				);
 				i++;
 			}
