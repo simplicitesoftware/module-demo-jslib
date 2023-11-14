@@ -5,12 +5,10 @@ var DemoJSLib = DemoJSLib || (() => {
 	const prd = app.getBusinessObject('DemoProduct');
 	const ord = app.getBusinessObject('DemoOrder');
 
-	function product(evt) {
-		$ui.displayForm(null, prd.getName(), $(this).parent().data('item').row_id, { nav: 'add' });
-	}
+	const product = evt => $ui.displayForm(null, prd.getName(), $(evt.target).data('row_id'), { nav: 'add' });
 	
-	function order(evt) {
-		const prd = $(this).data('item');
+	const order = evt => {
+		const prd = $(evt.target).data('item');
 		ord.getForCreate().then(item => {
 			item.demoOrdPrdId = prd.row_id;
 			// Populate other referenced fields
@@ -19,7 +17,7 @@ var DemoJSLib = DemoJSLib || (() => {
 					item[`demoOrdPrdId__${f}`] = prd[f];
 			$ui.displayForm(null, ord.getName(), app.constants.DEFAULT_ROW_ID, { nav: 'add', metadata: true, values: item });
 		});
-	}
+	};
 
 	function render(params) {
 		prd.search({ demoPrdAvailable: true }).then(list => {
@@ -36,12 +34,18 @@ var DemoJSLib = DemoJSLib || (() => {
 				indicators.append(b);
 				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}"/>`)
 					.append($('<div class="product"/>')
-						.append($('<div/>').append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product)))
+						.append($('<div/>').append($('<img/>')
+							.attr('src', prd.getFieldDocumentURL('demoPrdPicture', item))
+							.data('row_id', item.row_id)
+							.click(product)))
 						.append($('<div/>')
 							.append($('<h1/>').text(item.demoPrdName))
 							.append($('<h2/>').text(item.demoPrdReference))
 							.append($('<p/>').html(item.demoPrdDescription))
-							.append($('<button/>').text('Order !').data('item', item).click(order))
+							.append($('<button/>')
+								.text('Order!')
+								.data('item', item)
+								.click(order))
 						)
 					)
 				);
