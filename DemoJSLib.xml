@@ -29,6 +29,20 @@ within the generic Simplicité&reg; UI.]]></mdl_comment>
 	</data>
 </object>
 <object>
+	<name>ShortCut</name>
+	<action>upsert</action>
+	<data>
+		<shc_name>DemoJSLib</shc_name>
+		<shc_url><![CDATA[[EXPR:HTMLPage.getExternalObjectURL("DemoJSLib")]]]></shc_url>
+		<shc_target>frame_work</shc_target>
+		<shc_order>125</shc_order>
+		<shc_visible>P;H</shc_visible>
+		<shc_icon>icon/color/snap-grid</shc_icon>
+		<shc_keys>Alt+W</shc_keys>
+		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
 	<name>ObjectExternal</name>
 	<action>upsert</action>
 	<data>
@@ -41,7 +55,7 @@ the _Product_ business object list]]></obe_comment>
 		<obe_help/>
 		<obe_class/>
 		<obe_script_id>src/com/simplicite/extobjects/DemoJSLib/DemoJSLib.java</obe_script_id>
-		<obe_icon>jslib</obe_icon>
+		<obe_icon>icon/color/snap-grid</obe_icon>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
 </object>
@@ -217,6 +231,26 @@ the _Product_ business object list]]></obe_comment>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Catalogue produits (lib JS)</tsl_value>
 		<tsl_help/>
+		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>TranslateShortcut</name>
+	<action>upsert</action>
+	<data>
+		<tsl_typeShortcut>S</tsl_typeShortcut>
+		<tsl_id.shc_name>DemoJSLib</tsl_id.shc_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Products catalog</tsl_value>
+		<tsl_tooltip/>
+		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeShortcut>S</tsl_typeShortcut>
+		<tsl_id.shc_name>DemoJSLib</tsl_id.shc_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Catalogue produits</tsl_value>
+		<tsl_tooltip/>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
 </object>
