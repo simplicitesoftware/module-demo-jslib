@@ -10,7 +10,7 @@ var DemoJSLib = DemoJSLib || (() => {
 	}
 	
 	function order(evt) {
-		const prd = $(this).parent().data('item');
+		const prd = $(this).data('item');
 		ord.getForCreate().then(item => {
 			item.demoOrdPrdId = prd.row_id;
 			// Populate other referenced fields
@@ -29,13 +29,12 @@ var DemoJSLib = DemoJSLib || (() => {
 				products.append(
 					$('<div class="col"/>')
 						.append($('<div class="card"/>')
-							.data('item', item)
 							.append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product))
 							.append($('<div class="card-body"/>')
 								.append($('<h5 class="card-title"/>').text(item.demoPrdName))
 								.append($('<h6 class="card-subtitle mb2-2 text-muted"/>').text(item.demoPrdReference))
 								.append($('<p class="card-text"/>').html(item.demoPrdDescription))
-								.append($('<button class="btn btn-primary"/>').text('Order !').click(order))
+								.append($('<button class="btn btn-primary"/>').text('Order !').data('item', item).on('click', order))
 							)
 						)
 				);
