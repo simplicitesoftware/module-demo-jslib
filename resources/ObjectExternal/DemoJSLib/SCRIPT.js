@@ -5,10 +5,12 @@ var DemoJSLib = DemoJSLib || (() => {
 	const prd = app.getBusinessObject('DemoProduct');
 	const ord = app.getBusinessObject('DemoOrder');
 
-	const product = evt => $ui.displayForm(null, prd.getName(), $(evt.target).data('row_id'), { nav: 'add' });
+	function product(evt) {
+		$ui.displayForm(null, prd.getName(), $(this).parent().data('item').row_id, { nav: 'add' });
+	}
 	
-	const order = evt => {
-		const prd = $(evt.target).data('item');
+	function order(evt) {
+		const prd = $(this).parent().data('item');
 		ord.getForCreate().then(item => {
 			item.demoOrdPrdId = prd.row_id;
 			// Populate other referenced fields
@@ -17,37 +19,25 @@ var DemoJSLib = DemoJSLib || (() => {
 					item[`demoOrdPrdId__${f}`] = prd[f];
 			$ui.displayForm(null, ord.getName(), app.constants.DEFAULT_ROW_ID, { nav: 'add', metadata: true, values: item });
 		});
-	};
+	}
 
 	function render(params) {
 		prd.search({ demoPrdAvailable: true }).then(list => {
-			const indicators = $('#demojslib .carousel-indicators').empty();
-			const products = $('#demojslib .carousel-inner').empty();
+			const products = $('#demojslib').empty().addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5");
 			let i = 0;
 			for (const item of list) {
-				const b = $('<button/>')
-					.attr('data-bs-target', '#demojslib')
-					.attr('data-bs-slide-to', i)
-					.attr('aria-label', item.demoPrdReference);
-				if (i == 0)
-					b.addClass('active').attr('aria-active', true);
-				indicators.append(b);
-				products.append($(`<div class="carousel-item${i == 0 ? ' active' : ''}" data-bs-interval="5000"/>`)
-					.append($('<div class="bg-body product"/>')
-						.append($('<div/>').append($('<img/>')
-							.attr('src', prd.getFieldDocumentURL('demoPrdPicture', item))
-							.data('row_id', item.row_id)
-							.click(product)))
-						.append($('<div class="product-desc"/>')
-							.append($('<h1/>').text(item.demoPrdName))
-							.append($('<h2/>').text(item.demoPrdReference))
-							.append($('<p/>').html(item.demoPrdDescription))
-							.append($('<button/>')
-								.text('Order!')
-								.data('item', item)
-								.click(order))
+				products.append(
+					$('<div class="col"/>')
+						.append($('<div class="card"/>')
+							.data('item', item)
+							.append($('<img/>').attr('src', prd.getFieldDocumentURL('demoPrdPicture', item)).click(product))
+							.append($('<div class="card-body"/>')
+								.append($('<h5 class="card-title"/>').text(item.demoPrdName))
+								.append($('<h6 class="card-subtitle mb2-2 text-muted"/>').text(item.demoPrdReference))
+								.append($('<p class="card-text"/>').html(item.demoPrdDescription))
+								.append($('<button class="btn btn-primary"/>').text('Order !').click(order))
+							)
 						)
-					)
 				);
 				i++;
 			}

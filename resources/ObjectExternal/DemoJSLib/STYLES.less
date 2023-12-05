@@ -1,47 +1,20 @@
-@button-color: #418CF0;
-@border: solid .0625rem #EEEEEE;
-@shadow: .25rem .25rem 1rem #505050;
-
+/* Default */
 #demojslib {
-	padding-bottom: 3rem;
-	background: #FFFFFF;
-	.carousel-item {
-	    text-align: center;
-		padding: 1rem;
-		h1 { color: #202020; font-size: 2rem; }
-		h2 { color: #CB8620; font-size: 1.75rem; font-style: italic; }
-		p { color: #707070; font-size: 1.25rem; }
-		img {
-			max-width: 200px;
-			border: solid 1px transparent;
-			border-radius: .5rem;
-			padding: .25rem;
-		}
-		img:focus, img:hover, img:active {
-			border: @border;
-			box-shadow: @shadow;
-			cursor: pointer;
-		}
-		button {
-			background: @button-color;
-			color: #FFFFFF;
-			padding: .2rem 1rem;
-			font-size: 1.25rem;
-			border: none 0;
-			border-radius: 5px;
-		}
-		button:hover, button:active {
-			background: darken(@button-color, 10%);
-		}
-		img:active, button:active {
-			transform: translateY(4px);
-		}
-		.product {
-			display: flex;
-			justify-content: center;
-			.product-desc {
-				padding: 1rem;
-			}
+	.card {
+		text-align: center;
+		border-radius: .5rem;
+		padding: .5rem;
+		border: solid .0625rem #E0E0E0;
+		box-shadow: .5rem .5rem .75rem #A0A0A0;
+	}
+}
+
+/* Theme-sepcific */
+.simplicite-theme-ThemeAdmin {
+	#demojslib {
+		.card {
+			border-color: #5c5b64;
+			box-shadow: .5rem .5rem .75rem #2b2a33;
 		}
 	}
 }
