@@ -38,7 +38,7 @@ within the generic Simplicité&reg; UI.]]></mdl_comment>
 		<shc_order>125</shc_order>
 		<shc_visible>P;H</shc_visible>
 		<shc_icon>icon/color/snap-grid</shc_icon>
-		<shc_keys>Alt+W</shc_keys>
+		<shc_keys>Alt+P</shc_keys>
 		<row_module_id.mdl_name>DemoJSLib</row_module_id.mdl_name>
 	</data>
 </object>
