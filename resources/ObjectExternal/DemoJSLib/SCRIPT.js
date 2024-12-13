@@ -22,13 +22,13 @@ class DemoJSLib {
 					item.demoOrdPrdId = itm.row_id;
 					// Populate other referenced fields
 					for (const f in itm)
-						if (typeof item[`demoOrdPrdId__${f}`] !== "undefined")
+						if (typeof item[`demoOrdPrdId__${f}`] !== 'undefined')
 							item[`demoOrdPrdId__${f}`] = itm[f];
 					$ui.displayForm(null, ord.getName(), app.constants.DEFAULT_ROW_ID, { nav: 'add', metadata: true, values: item });
 				});
 			};
 
-			const products = $('#demojslib').empty().addClass("row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5");
+			const products = $('#demojslib').empty().addClass('row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5');
 			let i = 0;
 			for (const item of list) {
 				products.append(
