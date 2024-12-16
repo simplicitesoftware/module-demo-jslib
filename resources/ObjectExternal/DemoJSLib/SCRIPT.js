@@ -2,10 +2,10 @@
 // Client side JavaScript for JSLib demo page
 //-----------------------------------------------------------
 
-/* global $ui, $tools */
+/* global simplicite */
 
-class DemoJSLib {
-	static render(params) {
+class DemoJSLib { // eslint-disable-line no-unused-vars
+	static render(_params) {
 		const app = simplicite.session(); // Client lib is referenced in Java code
 		app.info(`Using lib version: ${simplicite.constants.MODULE_VERSION}`);
 
@@ -29,7 +29,6 @@ class DemoJSLib {
 			};
 
 			const products = $('#demojslib').empty().addClass('row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5');
-			let i = 0;
 			for (const item of list) {
 				products.append(
 					$('<div class="col"/>')
@@ -43,7 +42,6 @@ class DemoJSLib {
 							)
 						)
 				);
-				i++;
 			}
 		});
 	}
