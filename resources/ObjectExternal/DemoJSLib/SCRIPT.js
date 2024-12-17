@@ -4,8 +4,8 @@
 
 /* global simplicite */
 
-class DemoJSLib { // eslint-disable-line no-unused-vars
-	static render(_params) {
+var DemoJSLib = DemoJSLib || (() => {
+	function render(_params) {
 		const app = simplicite.session(); // Client lib is referenced in Java code
 		app.info(`Using lib version: ${simplicite.constants.MODULE_VERSION}`);
 
@@ -45,4 +45,6 @@ class DemoJSLib { // eslint-disable-line no-unused-vars
 			}
 		});
 	}
-}
+
+	return { render: render };
+})();
