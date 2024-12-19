@@ -11,9 +11,33 @@
 `DemoJSLib` module definition
 =============================
 
+### Introduction
+
 This modules is a demo of the usage of the
 [Simplicité&reg; NPM JS lib](https://www.npmjs.com/package/simplicite)
 within the generic Simplicité&reg; UI.
+
+### Prerequisites
+
+The `Demo` module **must** be installed and configured before importing this addon module.
+
+### Import
+
+To import this module:
+
+- Create a module named `DemoJSLib`
+- Set the settings as:
+
+```json
+{
+	"type": "git",
+	"origin": {
+		"uri": "https://github.com/simplicitesoftware/module-demo-jslib.git"
+	}
+}
+```
+
+- Click on the _Import module_ button
 
 `DemoJSLib` external object definition
 --------------------------------------
