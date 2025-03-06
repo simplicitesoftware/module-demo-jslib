@@ -1,9 +1,9 @@
 {
-    "date": "2024-12-19 17:30:06",
+    "date": "2025-03-06 16:10:52",
     "name": "DemoJSLib",
     "format": "xml",
     "files": ["DemoJSLib.xml"],
     "repository": {"origin": {"uri": "https://github.com/simplicitesoftware/module-demo-jslib.git"}},
     "version": "5",
-    "platform": "5.3.60-preview"
+    "platform": "5.3.64-preview"
 }
